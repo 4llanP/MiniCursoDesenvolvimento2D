@@ -7,7 +7,7 @@ public class Controladorplayer : MonoBehaviour
     [SerializeField]
     private float speed, jumpPower, radiusCircle, airTime;
     [SerializeField]
-    private Transform feetPosition;
+    private Transform feetPosition, mao;
     [SerializeField]
     private LayerMask groundLayer;
     [SerializeField]
@@ -104,5 +104,9 @@ public class Controladorplayer : MonoBehaviour
 
     public void fimAtaque(){
         inAtaque = false;
+    }
+    public void hitboxAtaque(){
+        GameObject hitboxtemp = Instantiate(prefHitbox, mao.position, transform.localRotation);
+        Destroy(hitboxtemp, 0.3f);
     }
 }
