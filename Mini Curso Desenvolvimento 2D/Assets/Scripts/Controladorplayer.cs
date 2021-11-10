@@ -18,6 +18,10 @@ public class Controladorplayer : MonoBehaviour
     private float moveInput, timer;
     private bool pressJump, possJump, startTime, isGrounded, inAtaque = false;
 
+    private void Awake(){
+        Application.targetFrameRate = 60;
+    }
+
     void Start()
     {
         anim = GetComponent<Animator>();
